@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    
+    <label for="length">Please enter the length of your drawing:</label>
+    <input type="number" id="length" name="length">
+    
+    <label for="width">Please enter the width of your drawing:</label>
+    <input type="number" id="width" name="width">
+    
+    <label for="thickness">Please enter the thickness of your drawing:</label>
+    <input type="number" id="thickness" name="thickness">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            // 獲取輸入值
+            let x = parseInt(document.getElementById('length').value);
+            let y = parseInt(document.getElementById('width').value);
+            let z = parseInt(document.getElementById('thickness').value);
+            
+            // 進行運算
+            let a = Math.floor(x / 2) - y;
+            let b = a + z;
+            
+            // 顯示結果
+            document.getElementById('result').textContent = `a: ${a}, b: ${b}`;
+        }
+    </script>
+</body>
+</html>
